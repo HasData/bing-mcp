@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.hasdata/bing",
   "title": "HasData Bing",
-  "description": "Bing search results with the ad block and the Copilot answer, geo, market and language targeting, as structured JSON.",
+  "description": "Bing search results with the ad block and Copilot answer, geo and market targeting, as JSON.",
   "version": "1.0.0",
   "websiteUrl": "https://hasdata.com/apis/bing-search-api",
   "repository": {
