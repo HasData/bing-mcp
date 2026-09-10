@@ -1,0 +1,41 @@
+{
+  "name": "@hasdata/bing-mcp",
+  "mcpName": "com.hasdata/bing",
+  "version": "1.0.0",
+  "description": "MCP server for Bing search through HasData's hosted API: organic results, the ad block where Bing shows one, and the Copilot answer, with geo, market and language targeting. No Azure subscription. 1,000 free credits every month.",
+  "type": "module",
+  "bin": {
+    "hasdata-bing-mcp": "index.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "mcp-remote": "^0.1.43"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HasData/bing-mcp.git"
+  },
+  "homepage": "https://hasdata.com/apis/bing-search-api",
+  "keywords": [
+    "mcp",
+    "bing",
+    "bing-mcp",
+    "serp",
+    "search-engine",
+    "seo",
+    "model-context-protocol",
+    "hasdata",
+    "scraper"
+  ]
+}
