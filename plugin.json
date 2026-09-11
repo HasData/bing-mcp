@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "hasdata-bing-mcp",
+  "version": "1.0.0",
+  "description": "Bing MCP server for Cursor. Bing search results with the ad block and the Copilot answer, targeted by market, country, language and device, as structured JSON. Remote MCP server hosted by HasData, connects over streamable HTTP with your HasData API key.",
+  "author": {
+    "name": "HasData",
+    "url": "https://hasdata.com"
+  },
+  "homepage": "https://hasdata.com/apis/bing-search-api",
+  "repository": "https://github.com/HasData/bing-mcp",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "bing",
+    "bing-mcp",
+    "serp",
+    "search-engine",
+    "seo",
+    "model-context-protocol",
+    "hasdata",
+    "scraper"
+  ]
+}
