@@ -164,9 +164,9 @@ One call answers each of these. Paging to the second and third page of results t
 
 ## Tools
 
-| Tool | Credits | What it returns |
-| :--- | :--- | :--- |
-| `hasdata_bing_serp_getSearchResults` | 10 | Organic results (title, url, snippet, displayed url, position), related searches, answer boxes/knowledge panels, and pagination metadata |
+| Tool | What it returns |
+| --- | --- |
+| `hasdata_bing_serp_getSearchResults` | Organic results (title, url, snippet, displayed url, position), related searches, answer boxes/knowledge panels, and pagination metadata. 10 credits a call |
 
 One tool, 10 credits per successful call.
 
