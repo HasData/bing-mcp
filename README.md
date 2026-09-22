@@ -9,12 +9,12 @@ It reads the Bing results page a signed-out visitor sees.
 **1,000 free credits every month, no card required**, which is 100 Bing calls at the 10-credit rate.
 
 ```
-https://mcp.hasdata.com/api/mcp?apis=bing
+https://mcp.hasdata.com/mcp?apis=bing
 ```
 
 [![Glama score](https://glama.ai/mcp/servers/HasData/bing-mcp/badges/score.svg)](https://glama.ai/mcp/servers/HasData/bing-mcp)
 [![tool contract](https://github.com/HasData/bing-mcp/actions/workflows/contract.yml/badge.svg)](https://github.com/HasData/bing-mcp/actions/workflows/contract.yml)
-[![MCP](https://img.shields.io/badge/MCP-remote%20%7C%20streamable%20HTTP-6366f1?style=flat-square)](https://mcp.hasdata.com/api/mcp?apis=bing)
+[![MCP](https://img.shields.io/badge/MCP-remote%20%7C%20streamable%20HTTP-6366f1?style=flat-square)](https://mcp.hasdata.com/mcp?apis=bing)
 [![Tools](https://img.shields.io/badge/tools-1-10b981?style=flat-square)](#tools)
 [![npm](https://img.shields.io/npm/v/@hasdata/bing-mcp?style=flat-square&logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/@hasdata/bing-mcp)
 [![PyPI](https://img.shields.io/pypi/v/hasdata-bing-mcp?style=flat-square&logo=pypi&logoColor=white&label=PyPI&color=3775a9)](https://pypi.org/project/hasdata-bing-mcp/)
@@ -45,7 +45,7 @@ The server URL is the same for every client. We run it hands-on in Claude Code a
 
 | Field | Value |
 | :--- | :--- |
-| URL | `https://mcp.hasdata.com/api/mcp?apis=bing` |
+| URL | `https://mcp.hasdata.com/mcp?apis=bing` |
 | Transport | HTTP, streamable |
 | Auth header | `x-api-key: HASDATA_API_KEY` |
 
@@ -55,7 +55,7 @@ Clients with OAuth support can add the same URL as a connector and sign in witho
 <summary><b>Claude Code</b></summary>
 
 ```bash
-claude mcp add --transport http bing "https://mcp.hasdata.com/api/mcp?apis=bing" \
+claude mcp add --transport http bing "https://mcp.hasdata.com/mcp?apis=bing" \
   --header "x-api-key: HASDATA_API_KEY"
 ```
 
@@ -64,7 +64,7 @@ claude mcp add --transport http bing "https://mcp.hasdata.com/api/mcp?apis=bing"
 <details>
 <summary><b>Claude Desktop</b></summary>
 
-Settings, then Connectors, then Add custom connector, then paste `https://mcp.hasdata.com/api/mcp?apis=bing` and sign in.
+Settings, then Connectors, then Add custom connector, then paste `https://mcp.hasdata.com/mcp?apis=bing` and sign in.
 
 For the config-file route, Claude Desktop loads only local (stdio) servers, so it reaches a remote server through a stdio launcher. The `@hasdata/bing-mcp` package is that launcher, and it reads the key from the environment. Add this to `claude_desktop_config.json`:
 
@@ -105,7 +105,7 @@ For Python instead of Node, swap the launcher for the PyPI package, which `uvx` 
 {
   "mcpServers": {
     "bing": {
-      "url": "https://mcp.hasdata.com/api/mcp?apis=bing",
+      "url": "https://mcp.hasdata.com/mcp?apis=bing",
       "headers": { "x-api-key": "HASDATA_API_KEY" }
     }
   }
@@ -123,7 +123,7 @@ For Python instead of Node, swap the launcher for the PyPI package, which `uvx` 
 {
   "mcpServers": {
     "bing": {
-      "serverUrl": "https://mcp.hasdata.com/api/mcp?apis=bing",
+      "serverUrl": "https://mcp.hasdata.com/mcp?apis=bing",
       "headers": { "x-api-key": "HASDATA_API_KEY" }
     }
   }
@@ -142,7 +142,7 @@ For Python instead of Node, swap the launcher for the PyPI package, which `uvx` 
   "servers": {
     "bing": {
       "type": "http",
-      "url": "https://mcp.hasdata.com/api/mcp?apis=bing",
+      "url": "https://mcp.hasdata.com/mcp?apis=bing",
       "headers": { "x-api-key": "HASDATA_API_KEY" }
     }
   }
