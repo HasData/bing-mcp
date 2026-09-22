@@ -1,0 +1,32 @@
+---
+description: How to pull Bing search results, ads and the Copilot answer through the HasData MCP server
+alwaysApply: false
+---
+
+# Bing through HasData
+
+One tool, `hasdata_bing_serp_getSearchResults`, and it takes `q`. Everything else shapes which Bing answers.
+
+## Targeting
+
+`mkt` is the market, `cc` the country and `setLang` the interface language. `location` takes free text, while `lat` and `lon` take coordinates, and sending all three silently drops the text. Pick one way to say where the search happens.
+
+`safeSearch` and `filters` narrow the set, and `deviceType` asks Bing for the desktop, mobile or tablet page.
+
+## `first` is an offset, and an unreliable one
+
+`first` is a result offset rather than a page number, and page two is `first: 11`. In measurement, `1`, `8` and `21` all returned the same results as a call with no `first` at all, while `11` returned a different set. Positions restart at 1 in every response, so an offset that Bing quietly ignored looks exactly like a page of new results.
+
+Compare the links before you trust a second page, deduplicate by `link` when merging, and treat the count already collected plus `position` as the absolute rank.
+
+## Reading the payload
+
+The result count moves. The same query returned six organic results on one call and fourteen on another, because Bing decides how much of the page is ads, answers and widgets. Never hard-code a count or assume ten.
+
+The response carries `organicResults`, and `ads`, `copilotSearch` and `pagination` when the page has them. Those three are absent rather than empty, so test for the key before reading it. There is no knowledge panel, video or image block in this payload.
+
+`copilotSearch` is not one string. The answer sits in `textBlocks`, typed as headings and lists, and `references` is often empty, so a citation list may have nothing in it to report.
+
+An ad `link` is a Bing click tracker on `bing.com/aclk` with the destination buried inside. Read `displayedLink` when you want the advertiser's domain.
+
+Each successful call spends credits from the connected account, so run the query once and work from the payload rather than re-searching per field.
