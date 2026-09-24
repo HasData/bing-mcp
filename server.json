@@ -3,7 +3,7 @@
   "name": "com.hasdata/bing",
   "title": "HasData Bing",
   "description": "Bing search results with the ad block and Copilot answer, geo and market targeting, as JSON.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "websiteUrl": "https://hasdata.com/apis/bing-search-api",
   "repository": {
     "url": "https://github.com/HasData/bing-mcp",
@@ -27,7 +27,7 @@
     {
       "registryType": "npm",
       "identifier": "@hasdata/bing-mcp",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "transport": {
         "type": "stdio"
       },
@@ -43,7 +43,7 @@
     {
       "registryType": "pypi",
       "identifier": "hasdata-bing-mcp",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"
