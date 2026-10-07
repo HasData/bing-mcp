@@ -16,6 +16,7 @@ https://mcp.hasdata.com/mcp?apis=bing
 [![tool contract](https://github.com/HasData/bing-mcp/actions/workflows/contract.yml/badge.svg)](https://github.com/HasData/bing-mcp/actions/workflows/contract.yml)
 [![MCP](https://img.shields.io/badge/MCP-remote%20%7C%20streamable%20HTTP-6366f1?style=flat-square)](https://mcp.hasdata.com/mcp?apis=bing)
 [![Tools](https://img.shields.io/badge/tools-1-10b981?style=flat-square)](#tools)
+- [Prompts and resources](#prompts-and-resources)
 [![npm](https://img.shields.io/npm/v/@hasdata/bing-mcp?style=flat-square&logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/@hasdata/bing-mcp)
 [![PyPI](https://img.shields.io/pypi/v/hasdata-bing-mcp?style=flat-square&logo=pypi&logoColor=white&label=PyPI&color=3775a9)](https://pypi.org/project/hasdata-bing-mcp/)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
@@ -221,6 +222,20 @@ An organic result has `position`, `title`, `link`, `displayedLink`, `source` and
   "references": []
 }
 ```
+
+## Prompts and resources
+
+The server exposes 5 resources, one per parameter whose accepted values are a fixed list. Reading one is cheaper than learning the vocabulary from a rejected call, and it costs no credits. Each URI is `hasdata://bing/<parameter>`.
+
+| Parameter | Values | What it selects |
+| --- | ---: | --- |
+| `mkt` | 38 | The two-letter country code for the country to search from. |
+| `cc` | 36 | The two-letter country code for the country to search from. |
+| `setLang` | 39 | The language of the user interface and preferred result language. Accepts a two-letter language code (e.g. `en`, `de`) or a locale/script variant (e.g. `en-gb`, `zh-hans`, `pt-br`). |
+| `safeSearch` | 3 | Adult Content Filtering option. |
+| `deviceType` | 3 | Specify the device type for the search. |
+
+The list is served without an API key, so a client can read it before a user has signed up.
 
 ## Errors and failure paths
 
