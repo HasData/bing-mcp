@@ -30,3 +30,7 @@ The response carries `organicResults`, and `ads`, `copilotSearch` and `paginatio
 An ad `link` is a Bing click tracker on `bing.com/aclk` with the destination buried inside. Read `displayedLink` when you want the advertiser's domain.
 
 Each successful call spends credits from the connected account, so run the query once and work from the payload rather than re-searching per field.
+
+## Prompts and resources
+
+The server also serves resources that spell out the accepted values of every parameter that takes a fixed list, each one at `hasdata://bing/<parameter>`. Reading one spends no credits and makes no upstream request, which beats discovering the vocabulary from a rejected call. Listing them needs no API key either, so a client can read them before the user has connected an account.
